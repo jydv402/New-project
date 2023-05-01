@@ -1,6 +1,7 @@
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:collab_flutter_project/one.dart';
+import 'two.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -19,11 +20,20 @@ class Homepage extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: ElevatedButton(onPressed: () {}, child: const Text('1')),
+                child: ElevatedButton(onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                         return const Firstpage();
+                      }));
+                  
+                }, child: const Text('1')),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: ElevatedButton(onPressed: () {}, child: const Text('2')),
+                child: ElevatedButton(onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                         return const Secondpage();
+                      }));
+                }, child: const Text('2')),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
