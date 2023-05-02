@@ -1,3 +1,4 @@
+import 'package:collab_flutter_project/three.dart';
 import 'package:flutter/material.dart';
 import 'package:collab_flutter_project/one.dart';
 import 'two.dart';
@@ -41,7 +42,14 @@ class Homepage extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: ElevatedButton(onPressed: () {}, child: const Text('3')),
+                child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const Thirdpage();
+                      }));
+                    },
+                    child: const Text('3')),
               ),
             ],
           ),
