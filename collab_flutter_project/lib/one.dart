@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
 class Firstpage extends StatelessWidget {
   const Firstpage({super.key});
@@ -7,29 +6,27 @@ class Firstpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 12, 43, 88),
+      backgroundColor: const Color.fromARGB(255, 233, 233, 229),
       appBar: AppBar(
         title: const Center(
 
-          child: Text('A M I N A  :)'),
+          child: Text('A M I N A'),
         
         ),
 
 
         titleTextStyle: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.white,),
-        backgroundColor: Colors.black,
+        backgroundColor:const Color.fromARGB(255, 25, 50, 88),
         ),
 
       
         floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.black,
+        backgroundColor: const Color.fromARGB(255, 25, 50, 88),
         onPressed: () {
           Navigator.pop(context, "Returned from Amina's Page");
         },
         child: const Icon(Icons.home),
       ),
-body: Center(child: Lottie.network('https://assets6.lottiefiles.com/packages/lf20_jpxsQh.json'),),
-
     );
   }
 }
