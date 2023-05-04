@@ -20,7 +20,6 @@ class Firstpage extends StatelessWidget {
         backgroundColor: Colors.black,
         ),
 
-      
         floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.black,
         onPressed: () {
@@ -28,7 +27,13 @@ class Firstpage extends StatelessWidget {
         },
         child: const Icon(Icons.home),
       ),
-body: Center(child: Lottie.network('https://assets6.lottiefiles.com/packages/lf20_jpxsQh.json'),),
+body: Column(
+  children: [
+    ElevatedButton(onPressed: () {}, child: const Text('HI')),
+        Center(child: Lottie.network('https://assets6.lottiefiles.com/packages/lf20_jpxsQh.json'),),
+        
+  ],
+),
 
     );
   }
