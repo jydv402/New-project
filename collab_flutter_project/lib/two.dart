@@ -41,6 +41,11 @@ class _SecondpageState extends State<Secondpage> {
                 elevation: 10,
                 onPressed: () {
                   Navigator.pop(context, "Returned from Jayadev's Page");
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    content: Text("Returned to Homepage"),
+                    duration: Duration(milliseconds: 500),
+                    behavior: SnackBarBehavior.floating,
+                  ));
                 },
                 backgroundColor: Colors.deepPurple[500],
                 hoverColor: Colors.red,
@@ -58,6 +63,10 @@ class _SecondpageState extends State<Secondpage> {
                   setState(() {
                     clrA = r.nextInt(0xffffffff);
                     clrB = r.nextInt(0xffffffff);
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      content: Text("Changed Background Gradient"),
+                      duration: Duration(milliseconds: 350),
+                    ));
                   });
                 },
                 backgroundColor: Colors.deepPurple[500],
