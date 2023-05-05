@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
+import 'package:lottie/lottie.dart';
 
 class Secondpage extends StatefulWidget {
   const Secondpage({super.key});
@@ -30,6 +31,16 @@ class _SecondpageState extends State<Secondpage> {
         body: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(colors: [Color(clrA), Color(clrB)])),
+          child: Stack(children: [
+            Center(
+              child: Lottie.network(
+                'https://assets1.lottiefiles.com/packages/lf20_96bovdur.json',
+                alignment: const Alignment(0, 0),
+                height: MediaQuery.of(context).size.height * 0.65,
+                width: MediaQuery.of(context).size.width * 0.65,
+              ),
+            ),
+          ]),
         ),
         floatingActionButton: Stack(
           fit: StackFit.expand,
