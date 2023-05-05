@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:lottie/lottie.dart';
@@ -18,14 +20,28 @@ class _SecondpageState extends State<Secondpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        extendBodyBehindAppBar: true,
         appBar: AppBar(
-          backgroundColor: Colors.deepPurple[500],
+          //Blurred appbar
+          iconTheme: const IconThemeData(color: Colors.black),
+          elevation: 0,
+          flexibleSpace: ClipRect(
+              child: BackdropFilter(
+            filter: ImageFilter.blur(
+              sigmaX: 10,
+              sigmaY: 10,
+            ),
+            child: Container(
+              color: Colors.transparent,
+            ),
+          )),
+          backgroundColor: Colors.white.withAlpha(140),
           title: const Text("Jayadev's Page"),
           centerTitle: true,
           titleTextStyle: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: Colors.black,
           ),
         ),
         body: Container(
@@ -52,10 +68,11 @@ class _SecondpageState extends State<Secondpage> {
                 elevation: 10,
                 onPressed: () {
                   Navigator.pop(context, "Returned from Jayadev's Page");
+
                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                     content: Text("Returned to Homepage"),
                     duration: Duration(milliseconds: 500),
-                    behavior: SnackBarBehavior.floating,
+                    behavior: SnackBarBehavior.fixed,
                   ));
                 },
                 backgroundColor: Colors.deepPurple[500],
@@ -74,9 +91,11 @@ class _SecondpageState extends State<Secondpage> {
                   setState(() {
                     clrA = r.nextInt(0xffffffff);
                     clrB = r.nextInt(0xffffffff);
+                    //Snackbar
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text("Changed Background Gradient"),
                       duration: Duration(milliseconds: 350),
+                      behavior: SnackBarBehavior.fixed,
                     ));
                   });
                 },
