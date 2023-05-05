@@ -1,6 +1,7 @@
 import 'package:collab_flutter_project/three.dart';
 import 'package:flutter/material.dart';
 import 'package:collab_flutter_project/one.dart';
+import 'four.dart';
 import 'two.dart';
 
 class Homepage extends StatelessWidget {
@@ -15,56 +16,52 @@ class Homepage extends StatelessWidget {
       ),
       body: Container(
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return const Firstpage();
-                      }));
-                    },
-                    child: const Text('1')),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return const Secondpage();
-                      }));
-                    },
-                    child: const Text('2')),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return const Thirdpage();
-                      }));
-                    },
-                    child: const Text('3')),
-              ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return const Secondpage();
-                      }));
-                    },
-                    child: const Text('4')),
-              ),
-            ],
-          ),
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const Firstpage();
+                    }));
+                  },
+                  child: const Text('1')),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const Secondpage();
+                    }));
+                  },
+                  child: const Text('2')),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const Thirdpage();
+                    }));
+                  },
+                  child: const Text('3')),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const Fourthpage();
+                    }));
+                  },
+                  child: const Text('4')),
+            ),
+          ]),
         ),
       ),
     );
