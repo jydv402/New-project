@@ -10,9 +10,13 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromRGBO(138, 204, 216, 1),
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Buttons'),
+        title: const Text(
+          'Buttons',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 33),
+        ),
       ),
       body: Container(
         child: Center(

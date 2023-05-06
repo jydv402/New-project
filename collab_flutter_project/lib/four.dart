@@ -10,7 +10,7 @@ class Fourthpage extends StatelessWidget {
           centerTitle: true,
           title: const Text("Karthik's Page",
               style: TextStyle(
-                  color: Colors.cyan,
+                  color: Colors.deepPurple,
                   fontWeight: FontWeight.bold,
                   fontSize: 33))),
     );
