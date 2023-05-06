@@ -7,11 +7,12 @@ class Fourthpage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        title: const Text("Karthik's Page",style: TextStyle(color: Colors.cyan,
-        fontweight: Fontweight.bold,
-        fontsize: 33))
-      ),
+          centerTitle: true,
+          title: const Text("Karthik's Page",
+              style: TextStyle(
+                  color: Colors.cyan,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 33))),
     );
   }
 }
