@@ -10,7 +10,10 @@ class Fourthpage extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
             gradient: LinearGradient(
-                colors: [Colors.lightGreenAccent, Colors.tealAccent])),
+          colors: [Colors.lightGreenAccent, Colors.tealAccent],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        )),
         child: Stack(children: [
           Center(
             child: Lottie.network(
