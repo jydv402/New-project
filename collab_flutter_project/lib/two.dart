@@ -24,7 +24,7 @@ class _SecondpageState extends State<Secondpage> {
     return Scaffold(
         extendBodyBehindAppBar: true,
         drawer: Drawer(
-            backgroundColor: Colors.transparent,
+            backgroundColor: Colors.white,
             elevation: 0,
             child: Container(
               decoration: BoxDecoration(
