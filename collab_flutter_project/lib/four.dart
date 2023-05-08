@@ -45,8 +45,8 @@ class Fourthpage extends StatelessWidget {
         shadowColor: Colors.deepOrangeAccent,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(60),
-              bottomRight: Radius.circular(60)),
+              bottomLeft: Radius.circular(30),
+              bottomRight: Radius.circular(30)),
         ),
         flexibleSpace: Container(
           decoration: const BoxDecoration(
