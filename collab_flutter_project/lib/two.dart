@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:lottie/lottie.dart';
 
+import 'two_sub/sub_page_1.dart';
+
 class Secondpage extends StatefulWidget {
   const Secondpage({super.key});
 
@@ -21,9 +23,48 @@ class _SecondpageState extends State<Secondpage> {
   Widget build(BuildContext context) {
     return Scaffold(
         extendBodyBehindAppBar: true,
+        drawer: Drawer(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [Color(clrB), Color(clrA)]),
+              ),
+              child: ListView(
+                children: [
+                  const DrawerHeader(
+                    child: Center(
+                      child: Text(
+                        "Jayadev's Page",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Colors.black87,
+                        ),
+                      ),
+                    ),
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.arrow_outward_rounded,
+                        color: Colors.black87),
+                    title: const Text("Page 1",
+                        style: TextStyle(
+                          color: Colors.black87,
+                          fontWeight: FontWeight.w600,
+                        )),
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const SubPage1();
+                      }));
+                    },
+                  )
+                ],
+              ),
+            )),
         appBar: AppBar(
           //Blurred appbar
-          iconTheme: const IconThemeData(color: Colors.black),
+          iconTheme: const IconThemeData(color: Colors.black38),
           elevation: 0,
           flexibleSpace: ClipRect(
               child: BackdropFilter(
@@ -36,11 +77,11 @@ class _SecondpageState extends State<Secondpage> {
             ),
           )),
           backgroundColor: Colors.white.withAlpha(140),
-          title: const Text("Jayadev's Page"),
+          title: const Text("The Gradient Isle"),
           centerTitle: true,
           titleTextStyle: const TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
+            fontSize: 30,
+            fontWeight: FontWeight.w700,
             color: Colors.black,
           ),
         ),
