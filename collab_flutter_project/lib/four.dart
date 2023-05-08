@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-class Fourthpage extends StatelessWidget {
+class Fourthpage extends StatefulWidget {
   const Fourthpage({super.key});
 
+  @override
+  State<Fourthpage> createState() => _FourthpageState();
+}
+
+class _FourthpageState extends State<Fourthpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,8 +57,13 @@ class Fourthpage extends StatelessWidget {
           decoration: const BoxDecoration(
             gradient: LinearGradient(colors: [
               Color.fromARGB(255, 248, 205, 48),
-              Color.fromARGB(255, 219, 68, 118)
+              Color.fromARGB(255, 219, 68, 118),
             ]),
+          ),
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(30),
+                bottomRight: Radius.circular(30)),
           ),
         ),
       ),
