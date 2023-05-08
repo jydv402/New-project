@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
+import 'package:lottie/lottie.dart';
 
 class Thirdpage extends StatefulWidget {
   const Thirdpage({super.key});
@@ -8,41 +8,52 @@ class Thirdpage extends StatefulWidget {
   State<Thirdpage> createState() => _ThirdpageState();
 }
 
-class _ThirdpageState extends State<Thirdpage> {
-  Random r = Random();
-  int c1 = 0xffBCEDF6;
-  int c2 = 0xff6B7FD7;
-  int val = 0;
+class _ThirdpageState extends State<Thirdpage>
+    with SingleTickerProviderStateMixin {
+  //controller
+  late final AnimationController _controller;
+  @override
+  void initState() {
+    super.initState();
+    _controller =
+        AnimationController(duration: Duration(seconds: 1), vsync: this);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
+  }
+
+  bool bookmarked = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 75, 3, 3),
-        title: const Text("Sreedhanya's page"),
-        centerTitle: true,
+        title: const Center(
+          child: Text("Sreedhanya's Page"),
+        ),
         titleTextStyle: const TextStyle(
-          fontStyle: FontStyle.italic,
+          color: Color.fromARGB(255, 255, 255, 255),
           fontSize: 30,
           fontWeight: FontWeight.bold,
-          color: Colors.white,
         ),
       ),
       body: Container(
-          decoration: BoxDecoration(
-              gradient: RadialGradient(colors: [Color(c1), Color(c2)]))),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Color.fromARGB(80, 32, 5, 5),
-        onPressed: () {
-          setState(() {
-            c1 = r.nextInt(0xffffffff);
-            c2 = r.nextInt(0xffffffff);
-            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-              content: Text("Changed Background Gradient"),
-              duration: Duration(milliseconds: 350),
-            ));
-          });
-        },
-        child: const Icon(Icons.flutter_dash),
+        child: GestureDetector(
+          onTap: () {
+            if (bookmarked == false) {
+              bookmarked = true;
+              _controller.forward();
+            } else {
+              bookmarked = false;
+              _controller.reverse();
+            }
+          },
+          child: Lottie.network(
+              'https://assets9.lottiefiles.com/packages/lf20_xdfeea13.json',
+              controller: _controller),
+        ),
       ),
     );
   }
