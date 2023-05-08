@@ -45,7 +45,6 @@ class _FourthpageState extends State<Fourthpage> {
             fontStyle: FontStyle.italic,
           ),
         ),
-        backgroundColor: Colors.amberAccent,
         elevation: 13,
         shadowColor: Colors.deepOrangeAccent,
         shape: const RoundedRectangleBorder(
@@ -55,15 +54,17 @@ class _FourthpageState extends State<Fourthpage> {
         ),
         flexibleSpace: Container(
           decoration: const BoxDecoration(
-            gradient: LinearGradient(colors: [
-              Color.fromARGB(255, 248, 205, 48),
-              Color.fromARGB(255, 219, 68, 118),
-            ]),
-          ),
-          shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(30),
                 bottomRight: Radius.circular(30)),
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 248, 205, 48),
+                Color.fromARGB(255, 219, 68, 118),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
           ),
         ),
       ),
