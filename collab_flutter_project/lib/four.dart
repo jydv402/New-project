@@ -12,18 +12,21 @@ class _FourthpageState extends State<Fourthpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       body: Container(
         decoration: const BoxDecoration(
-            gradient: LinearGradient(
-          colors: [Colors.lightGreenAccent, Colors.tealAccent],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        )),
-        child: Stack(children: [
+          gradient: LinearGradient(
+            colors: [Colors.lightGreenAccent, Colors.tealAccent],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: Column(children: [
           Center(
             child: Lottie.network(
                 'https://assets10.lottiefiles.com/packages/lf20_U6OKyytl3f.json'),
           ),
+          ElevatedButton(onPressed: () {}, child: const Text("Don't click"))
         ]),
       ),
       backgroundColor: const Color.fromARGB(255, 204, 255, 64),
@@ -49,8 +52,9 @@ class _FourthpageState extends State<Fourthpage> {
         shadowColor: Colors.deepOrangeAccent,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(30),
-              bottomRight: Radius.circular(30)),
+            bottomLeft: Radius.circular(30),
+            bottomRight: Radius.circular(30),
+          ),
         ),
         flexibleSpace: Container(
           decoration: const BoxDecoration(
