@@ -1,3 +1,4 @@
+import 'package:collab_flutter_project/two_sub/sub_page_1.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -26,7 +27,16 @@ class _FourthpageState extends State<Fourthpage> {
             child: Lottie.network(
                 'https://assets10.lottiefiles.com/packages/lf20_U6OKyytl3f.json'),
           ),
-          ElevatedButton(onPressed: () {}, child: const Text("Don't click"))
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: ((context) {
+                    return const SubPage1();
+                  })),
+                );
+              },
+              child: const Text("Don't click"))
         ]),
       ),
       backgroundColor: const Color.fromARGB(255, 204, 255, 64),
